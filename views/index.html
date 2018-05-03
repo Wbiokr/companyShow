@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.bootcss.com/fullPage.js/2.9.7/jquery.fullpage.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+  <div id="fullpage">
+            <!-- <div class="section s1">
+                <img src="../img/1.png" alt>
+            </div>
+             <div class="section s2">
+                 <img src="../img/1.png" alt>
+             </div>
+             <div class="section s3">
+                <img src="../img/1.png" alt>
+            </div> -->
+            <div class="section s4">
+                <img src="../img/1.png" alt>
+                <section>
+                  <div>
+                      <h3>招聘岗位</h3>
+                      <ul>
+                        <li><span>销售顾问助理&nbsp;&nbsp;×5</span>|<span>薪资4-20K</span></li>
+                        <li><span>服务顾问助理&nbsp;&nbsp;×5</span>|<span>薪资4-8K</span></li>
+                        <li><span>二手车销售助理&nbsp;&nbsp;×2</span>|<span>薪资3-20K</span></li>
+                        <li><span>配件专员&nbsp;&nbsp;×1</span>|<span>薪资4-8K</span></li>
+                        <li><span>续保助理&nbsp;&nbsp;×6</span>|<span>薪资4-8K</span></li>
+                        <li><span>市场专员&nbsp;&nbsp;×1</span>|<span>薪资4-5K</span></li>
+                        <li><span>收营员&nbsp;&nbsp;×1</span>|<span>薪资3-4K</span></li>
+                      </ul>
+                      <p>
+                        湖南腾众汽车销售服务有限公司
+                      </p>
+                  </div>
+                </section>
+            </div>
+            <!-- <div class="section s5">
+                <img src="../img/1.png" alt>
+            </div> -->
+        </div>
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+  <script>
+    $('#fullpage').fullpage({
+                 navigation:'true',
+                 navigationColor:'#fff',
+                 afterLoad(anchorLink,index){
+                   console.log(index)
+                 },
+                 onLeave(index){
+                   console.log(index,index)
+                 }
+             });
+  </script>
+</body>
+</html>
