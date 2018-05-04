@@ -1,24 +1,63 @@
 #fp-nav ul li a span, .fp-slidesNav ul li a span
-  background #333
+  background #fff
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span
+  // background #fff
+  animation circle 2s linear infinite alternate
 *
   margin 0 
   padding 0
+  box-sizing border-box
+  transition all ease 0.3s
 .section
-  background #000
+  background #ccc
   position relative
-  img
-    height 100%
-    width 110%
-    filter brightness(120%)
-    // opacity 0.7
-.s4
-  section
+  .fp-tableCell
+    background url('../img/bg.jpg') no-repeat center center
+    background-size 200% 200%
+  &.current
+    .fp-tableCell
+      background-size 100% 100%
+  //   img.bg
+  //     transform scale(1)
+  // img.bg
+  //   flex 1
+  //   position absolute
+  //   z-index 1
+  //   top 0
+  //   left 0
+  //   height 100%
+  //   width 100%
+  //   transform scale(1.8)
+.section
+  &.current
+    section
+      >div
+        transform scaleY(1)
+        border-radius 10px
+        transition-delay 0.3s
+        header
+          >h3
+            transform scaleX(1)
+            transition-delay 0.9s
+          .border 
+            width 100%
+            transition-delay 0.6s 
+        footer
+          .border
+            width 100%
+            transition-delay 1.2s
+          h4
+            transform scaleX(1)
+            opacity 1
+            transition-delay 1.5s
+  section 
     position absolute
     top 0 
     left 0
+    z-index 5
     width 100%
     height 100%
-    padding 40px 20px
+    padding 40px 25px
     box-sizing border-box
     display flex
     justify-content center
@@ -27,24 +66,257 @@
       box-shadow 0 0 20px -4px rgba(250,250,250,.7)
       border-radius 10px
       border 1px solid #666
-      background rgba(0,0,0,.65)
-      color #ca6
-      padding 40px 25px
-      >h3
-        border-bottom 1px solid #eee
-        text-align center
-        line-height 38px
-        font-size 20px
-      >ul
-        list-style none
-        padding 20px 0
-        li
-          line-height 40px
-          font-size 16px
+      background rgba(0,0,0,.75)
+      color #fff
+      padding 40px 15px
+      border-radius 100%
+      transform scaleY(0)
+      header
+        >h3
+          line-height 30px
+          font-size 22px
+          font-weight 500
+          font-family simHei
+          transform scaleX(0)
+        .border
+          width 0
+          height 1px
+          background #ddd
+          margin-top 5px
+      main
+        padding 15px 0
+      footer
+        h4
+          text-align center
+          font-size 14px
+          color #dedede
+          letter-spacing 3px
+          font-weight 500
+          margin-top 10px
+          transform scaleX(1.5)
+          opacity 0
+        .border
+          width 0
+          height 1px
+          background #ddd
+          
+          // margin-top 5px
+.s3
+  &.current
+    section div main
+      p
+        span
+          left 0
+          transition-delay 0.6s
+        font
+          transform translateX(0) skewX(0)
+          transition-delay 0.8s
+      p:nth-child(2)
+        span
+          transition-delay 0.8s
+        font
+          transition-delay 1s
+      p:nth-child(3)
+        span
+          transition-delay 1s
+        font
+          transition-delay 1.2s
+      p:nth-child(4)
+        span
+          transition-delay 1.2s
+        font
+          transition-delay 1.4s
+      p:nth-child(5)
+        span
+          transition-delay 1.4s
+        font
+          transition-delay 1.6s
+  section
+    div
+      main
+        overflow hidden
+        p
+          margin 15px 0
+          line-height 26px
+          font-size 14px
+          position relative
+          padding-left 80px
+          // transform translate(-100%)
+          overflow hidden
           span
-            margin 0 10px
-      >p
-        text-align center
-        border-top 1px solid #eee
-        line-height 46px
-        font-size 18px
+            position absolute
+            top 0
+            left -80px
+
+          font
+            display block
+            transform translateX(120%) skewX(28deg)
+.s2
+  &.current
+    section 
+      div 
+        main
+          p
+            color #fff
+            transform scaleY(1) rotateX(0)
+            transition-delay 1s
+            transition-duration 0.4s
+            
+
+  section
+    div
+      main
+        position relative
+        >span
+          position absolute
+          top 0
+          left 0
+          height 100%
+          width 100%
+          // background rgba(0,0,0,0.75)
+          z-index 1
+        p
+          line-height 26px
+          font-size 14px
+          text-indent 2em
+          color transparent
+          transform scaleY(0) rotateX(360deg)
+          // width 
+          // transform 
+      // box-shadow 
+.s1
+  .fp-tableCell
+    background-image url('../img/head.jpg')
+  &.current section
+    // img.bg
+    //   transform scale(1)
+
+    h3
+      animation title ease 0.5s 0.4s forwards
+      // opacity 1
+      // transform translateY(0)
+    >img
+      transform scale(1) skew(0) rotate(0)
+      // transition-delay 0.2s
+      // &.current
+      animation logo ease 0.8s   infinite alternate
+      // animation logo0 ease 0.8s 1s forwards
+      // animation-delay 1s
+    .p-3
+      width 100px
+      transition width ease 0.3s 0.8s
+    .p-1
+      transform translateX(0) skew(0)
+      opacity 1
+      transition-delay 1.1s
+    .p-2
+      transform scaleY(1)
+      transition-delay 1.4s
+  section 
+    flex-direction column
+    justify-content flex-end
+    padding-bottom 60px
+    color #333
+    overflow hidden
+    h3
+      font-size 18px
+      margin-top 20px
+      transform translateY(-100%)
+      opacity 0
+      overflow hidden
+    >img
+      display block
+      width 120px
+      // box-shadow 0 0 20px -2px rgba(0,0,0,.5)
+      border-radius 65px
+      transform scale(0) skew(-18deg) rotate(-18deg)
+      // transform scale(0) skew(-18deg) rotate(-18deg)
+      // animation logo ease 0.8s  infinite alternate
+    .p-3
+      // width 100px
+      height 1px 
+      background #666  
+      width 0
+    .p-1
+      line-height 30px
+      font-size 16px
+      opacity 0
+      transform translateX(-100%) skew(-40deg)
+    .p-2
+      margin-top 10px
+   
+      line-height 30px
+      font-size 14px
+      // height 0
+      overflow hidden
+      // line-height 0
+
+      transform scaleY(0)
+      span 
+        margin-right 14px
+.s4
+  &.current 
+    section div main ul
+      li
+        animation zpin 0.3s 0.5s ease forwards
+        for i in range(1,7,1)
+          &:nth-child({i})
+            animation-delay 0.5+i*0.3s
+  section
+   
+    >div
+      main
+        >ul
+          list-style none
+          padding 20px 0
+          li
+            line-height 40px
+            font-size 16px
+            transform scaleY(0)
+            
+            span
+              margin 0 10px
+@keyframes zpin
+  0%
+    transform scaleY(0)
+  // 50%
+  //   transform scale(1.2)
+  // 70%
+  //   transform scale(0.8)
+  // 90%
+  //   transform scale(1.1)
+  100%
+    transform scaleY(1)
+@keyframes logo 
+  from 
+    box-shadow 0 0 20px 0 rgba(250,250,250,.5)
+    transform-scale 0.97
+  to
+    box-shadow 0 0 30px -2px rgba(0,0,0,.5)
+    transform-scale 1 
+@keyframes logo0
+  0%
+    transform scale(0) skew(-18deg) rotate(-18deg)
+  60%
+    transform scale(1.4) skew(18deg) rotate(7deg)
+  100%
+    transform scale(1) skew(0) rotate(0)
+         
+@keyframes title
+  0% 
+    opacity 1
+    transform translateY(-100%) scale(1)
+  60%
+    opacity 1
+    transform translateY(50%) scale(1.3)
+  100%
+    opacity 1 
+    transform translateY(0) scale(1)
+
+@keyframes circle
+  0%
+    background-color #fff
+  50%
+    background-color #ca6 
+  100%
+    background-color orange 

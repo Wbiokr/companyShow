@@ -138,7 +138,7 @@ gulp.task('server', function () {
     open: 'external',
     startPath:`views/${process.env.name}.html`
   })
-  gulp.watch(res.views, ['html'])
+  gulp.watch(res.views, ['views'])
   gulp.watch(res.styls, ['stylus']);
   // gulp.watch(res.lesss, ['less']);
   // gulp.watch(res.scripts, ['script']);
