@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="../css/index.css">
 </head>
 <body>
+  <audio src="../wmbyy.mp3" loop preload onpause="pause()" onplaying="play()"></audio>
+  <img src="../img/bgmBtn-fbd2dc.svg" alt="" class="music" onclick="toggle()">
   <div id="fullpage">
             <div class="section s1">
                 <!-- <img src="../img/head.jpg" alt class="bg"> -->
@@ -125,6 +127,24 @@
                    console.log(index,index)
                  }
              });
+      document.querySelector('audio').play()
+
+      function pause(){
+        console.log(12)
+        $('.music').removeClass('current')
+      }
+      function play(){
+        $('.music').addClass('current')
+      }
+      function toggle(){
+        if(document.querySelector('audio').paused){
+          document.querySelector('audio').play()
+          play()
+        }else{
+          document.querySelector('audio').pause()
+          pause()
+        }
+      }
   </script>
 </body>
 </html>
