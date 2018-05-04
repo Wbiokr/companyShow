@@ -263,12 +263,12 @@
       transform scaleY(0)
       span 
         margin-right 14px
-.s4
+.s4,.s5
   &.current 
     section div main ul
       li
         animation zpin 0.3s 0.5s ease forwards
-        for i in range(1,7,1)
+        for i in range(1,8,1)
           &:nth-child({i})
             animation-delay 0.5+i*0.3s
   section
@@ -285,6 +285,45 @@
             
             span
               margin 0 10px
+.s5
+  &.current
+    section >div main >ul
+      li
+        animation zpin2 0.3s 0.5s ease forwards
+        for i in range(1,8,1)
+          &:nth-child({i})
+            animation-delay 0.5+i*0.3s
+  section >div main >ul
+    overflow hidden
+    li
+      transform translateX(-130%) skewX(-26deg)
+      // text-align cen
+      letter-spacing 2px
+.s6
+  &.current
+    .map
+      transform scale(1)
+      transition-delay 0.4s
+  position relative
+  .fp-tableCell
+    background-image url('../img/map.png')
+  .map
+    transform scale(0)
+    position absolute
+    top 55%
+    left 60px
+    background rgba(250,250,250,0.7)
+    box-shadow 0 0 20px 0px rgba(0,0,0,.3)
+    border-radius 4px
+    padding 20px 20px
+    span
+      border-top 10px solid transparent 
+      border-bottom 10px solid #fff 
+      border-left 10px solid transparent 
+      border-right 10px solid transparent 
+      position absolute 
+      top -20px 
+      left 96px 
 @keyframes zpin
   0%
     transform scaleY(0)
@@ -296,6 +335,16 @@
   //   transform scale(1.1)
   100%
     transform scaleY(1)
+@keyframes zpin2
+  0%
+    transform translateX(-130%) skewX(-26deg)
+  50%
+    transform translateX(5%) skewX(-3deg)
+  70%
+    transform translateX(-2%) skewX(2deg)
+  100%
+    transform translateX(0%) skewX(0deg)
+  
 @keyframes logo 
   from 
     box-shadow 0 0 20px 0 rgba(250,250,250,.5)
