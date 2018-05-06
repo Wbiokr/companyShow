@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>湖南腾众汽车销售服务有限公司</title>
-  <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon">
+  <link type="image/x-icon" href="../img/logo.png" rel="shortcut icon">
   <link href="https://cdn.bootcss.com/fullPage.js/2.9.7/jquery.fullpage.min.css" rel="stylesheet">
   <link href="../css/index.css" rel="stylesheet">
 </head>
 <body>
-  <audio src="http://pic.ibaotu.com/00/29/36/89k888piCmne.mp3" loop preload onpause="pause()" onplaying="play()"></audio>
+  <audio src="http://pic.ibaotu.com/00/29/36/89k888piCmne.mp3" loop autoplay preload onpause="pause()" onplaying="play()"></audio>
   <img class="music" src="../img/bgmBtn-fbd2dc.svg" alt onclick="toggle()">
   <div id="fullpage">
             <div class="section s1">
@@ -156,6 +156,7 @@
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
   <script>
+    alert('夏觉')
     $('#fullpage').fullpage({
                  navigation:'true',
                 //  navigationColor:'#fff',
@@ -188,6 +189,31 @@
           pause()
         }
       }
+
+      function audioAutoPlay(id){
+          var audio = document.querySelector('audio');
+
+          var play = function() {
+              document.removeEventListener("WeixinJSBridgeReady", play);
+              document.removeEventListener("YixinJSBridgeReady", play);
+
+              audio.play();
+              audio.pause();
+              // document.removeEventListener("touchstart", play, false);
+          };
+          
+          audio.play();
+          audio.pause();
+
+          //weixin
+          document.addEventListener("WeixinJSBridgeReady", play, false);
+          //yixin
+          document.addEventListener('YixinJSBridgeReady', play, false);
+
+          // document.addEventListener("touchstart", play, false);
+      }
+      audioAutoPlay();
+
   </script>
 </body>
 </html>
